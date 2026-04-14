@@ -1,0 +1,25 @@
+# People Counter — Zone Configuration
+# ------------------------------------
+# All zone coordinates are normalized (0.0 to 1.0) relative to frame size.
+# Example: x1=0.2, y1=0.2, x2=0.8, y2=0.8 defines the center 60% of the frame.
+
+zone:
+  x1: 0.0    # left edge of counting zone  (fraction of frame width)
+  y1: 0.0    # top edge of counting zone   (fraction of frame height)
+  x2: 1.0    # right edge of counting zone (fraction of frame width)
+  y2: 1.0    # bottom edge of counting zone(fraction of frame height)
+
+# Detection settings
+detection:
+  confidence_threshold: 0.5   # minimum score to accept a person detection (0.0–1.0)
+
+# Centroid tracker settings
+tracker:
+  max_disappeared: 30    # frames a person may be missing before track is dropped
+  max_distance: 100.0    # max pixel distance for centroid matching between frames
+
+# Display settings
+display:
+  show_zone: true          # draw the counting zone rectangle
+  show_tracking_ids: true  # draw person ID and in-zone time labels
+  show_stats: true         # draw entry/exit/current-count overlay panel
